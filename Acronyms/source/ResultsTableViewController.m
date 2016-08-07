@@ -72,6 +72,25 @@
     return cell;
 }
 
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if(section == 0)
+    {
+        if (self.searchResults.count > 0) {
+            return [NSString stringWithFormat:@"%ld Matches found for %@",self.searchResults.count, _searchController.searchBar.text ];
+        }
+        else
+        {
+        
+            return @"";
+        }
+        
+    }
+    return  nil;
+    
+}
+
+
 
 #pragma mark - search result updating
 
